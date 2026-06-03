@@ -134,8 +134,489 @@
         }
         
         .hero h1 {
-            font
-            
-            
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         
-               
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        body.dark .btn-secondary {
+            color: var(--text-light);
+            border-color: var(--text-light);
+        }
+        
+        .btn-secondary:hover { background: var(--primary); color: white; }
+        
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            width: 100%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            background: rgba(99, 102, 241, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+        
+        body.dark .about-content {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--light);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+        }
+        
+        body.dark .timeline-item::before { border-color: var(--dark); }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        body.dark .timeline-content { background: var(--dark-secondary); }
+        .timeline-content:hover { transform: translateX(8px); }
+        .timeline-content h3 { color: var(--primary); margin-bottom: 0.5rem; }
+        .timeline-content .date { color: var(--secondary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+        
+        body.dark .project-card {
+            background: var(--dark-secondary);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);
+        }
+        
+        .project-header {
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .project-body { padding: 1.5rem; }
+        .project-body h3 { color: var(--primary); margin-bottom: 1rem; }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        body.dark .tag { background: rgba(99, 102, 241, 0.2); }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        body.dark .skill-card { background: var(--dark-secondary); }
+        .skill-card:hover { transform: scale(1.05); }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name { font-weight: 600; font-size: 1.1rem; }
+        
+        .progress-bar {
+            height: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+        
+        .achievements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .achievement-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+        
+        body.dark .achievement-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+        }
+        
+        .achievement-card:hover { transform: translateX(8px); }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info, .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        body.dark .contact-info, body.dark .contact-form { background: var(--dark-secondary); }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid rgba(99, 102, 241, 0.2);
+            border-radius: 8px;
+            font-family: inherit;
+            background: var(--light);
+            color: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        body.dark .form-group input, body.dark .form-group textarea {
+            background: var(--dark);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in { animation: fadeInUp 0.6s ease forwards; }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(99, 102, 241, 0.05);
+            margin-top: 4rem;
+        }
+        
+        body.dark footer { background: rgba(99, 102, 241, 0.1); }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .tagline { font-size: 1.2rem; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--light);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            body.dark .nav-links { background: var(--dark); }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            section { padding: 3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">PB</div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle">🌙</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Pushpa JyotsnaSri Bodapati</h1>
+            <p class="tagline">Data Engineer | Python Developer</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="https://www.linkedin.com/in/pushpa-jyotsnasri-bodapati-a180532b4" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>B-Tech student specializing in Artificial Intelligence and Machine Learning at Kakinada Institute of Engineering and Technology, 2023-2027. Passionate Data Engineer with hands-on experience in Python development, machine learning, data pipelines, and ETL processes. Completed multiple internships and built AI-powered projects ranging from medical chatbots to fraud detection systems.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Experience & Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Eduskills Intern (Virtual)</h3>
+                    <div class="date">2023 - Present</div>
+                    <p>Completed internships in Google AIML, Google Android, Employability Skills, and Data Engineering. Worked with data pipelines, preprocessing techniques, and ETL models. Built basic mobile applications and applied machine learning fundamentals.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Cognifyz Intern (Virtual)</h3>
+                    <div class="date">2023 - Present</div>
+                    <p>Developed Python-based applications and practiced core programming concepts. Built hands-on projects to strengthen software development skills.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>B-Tech | AI & ML</h3>
+                    <div class="date">2023 - 2027</div>
+                    <p>Kakinada Institute of Engineering and Technology, Kakinada, India. Specializing in Artificial Intelligence and Machine Learning.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Intermediate</h3>
+                    <div class="date">2021 - 2023</div>
+                    <p>Pragati Junior College, Tanuku</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header"></div>
+                <div class="project-body">
+                    <h3>Medical Chatbot</h3>
+                    <p>Developed an AI-based medical chatbot using Python and NLP techniques. Integrated a dataset of common diseases and symptoms for prediction.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">AI</span>
+                    </div>
+                </div>
+            <div class="project-card">
+                <div class="project-header"></div>
+                <div class="project-body">
+                    <h3>Grammar Error Detection & Corrector</h3>
+                    <p>Developed an AI-based model using NLP models. Implemented real-time feedback mechanism for grammar correction.</p>
+                    <div class="tech-tags">
+                        <span class="tag">NLP</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                    </div>
+                </div>
+            <div class="project-card">
+                <div class="project-header"></div>
+                <div class="project-body">
+                    <h3>AI Fake Advertisement Detection</h3>
+                    <p>Designed a Machine Learning model to detect fraud or misleading advertisements using text classification techniques. Trained on labeled datasets to improve accuracy.</p>
+                    <div class="tech-tags">
+                        <span class="tag">ML</span>
+                        <span class="tag">Text Classification</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header"></div>
+                <div class="project-body">
+                    <h3>Credit Card Fraud Detection</h3>
+                    <p>Developed a fraud detection model using classification algorithms to identify suspicious credit card transactions. Applied data preprocessing and anomaly detection techniques.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Classification</span>
+                        <span class="tag">Anomaly Detection</span>
+                        <span class="tag">Python</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-header"></div>
+                <div class="project-body">
+                    <h3>Social Media Platform</h3>
+                    <p>Developed a responsive social media platform with features like post creation, likes, and comments. Designed and integrated backend APIs and database management for secure data handling.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Full-Stack</span>
+                        <span class="tag">APIs</span>
+                        <span class="tag">Database</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>    
+give me portfolio for this
